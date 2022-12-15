@@ -23,5 +23,35 @@ There are two functions to handle the bi-directional conversion of **JSON** to *
 
 ## Converting from JSON to dON
 
+```js
+const convertJSONtoDON = (JSON) => {
+  
+  let don = JSON;
+  
+  don = don.replaceAll('{"', '{«');
+  don = don.replaceAll('["', '[«');
+  don = don.replaceAll(':"', ': «');
+  don = don.replaceAll(':{', ': {');
+  don = don.replaceAll(':[', ': [');
+  don = don.replaceAll(',"', ', «');
+  don = don.replaceAll(',{', ', {');
+  don = don.replaceAll(',[', ', [');
+  don = don.replaceAll('":', '»:');
+  don = don.replaceAll('",', '»,');
+  don = don.replaceAll('"]', '»]');
+  don = don.replaceAll('"}', '»}');
+
+  return don;
+};
+```
+
 ## Converting from dON back to JSON
 
+```js
+const convertDONtoJSON = (don) => {
+  
+  let JSON = don.replace(/«|»/g, '"');
+
+  return JSON;
+};
+```
