@@ -14,7 +14,7 @@ ________
 ```
 
 ### The same example in dON
-```
+```json
 [{«This»: «is»}, «an», {«example»: [«of», «dON»]}]
 ```
 ________
