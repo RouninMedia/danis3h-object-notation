@@ -31,18 +31,21 @@ const convertJSONtoDON = (JSON) => {
   don = don.replaceAll('{"', '{«');
   don = don.replaceAll('["', '[«');
   don = don.replaceAll(':"', ': «');
+  don = don.replaceAll(',"', ', «');
+  
+  don = don.replaceAll('"}', '»}');
+  don = don.replaceAll('"]', '»]');
+  don = don.replaceAll('":', '»:');
+  don = don.replaceAll('",', '»,');
+  
   don = don.replaceAll(':{', ': {');
   don = don.replaceAll(':[', ': [');
   don = don.replaceAll(':true', ': true');
   don = don.replaceAll(':false', ': false');
   don = don.replaceAll(':null', ': null');
-  don = don.replaceAll(',"', ', «');
+  
   don = don.replaceAll(',{', ', {');
   don = don.replaceAll(',[', ', [');
-  don = don.replaceAll('":', '»:');
-  don = don.replaceAll('",', '»,');
-  don = don.replaceAll('"]', '»]');
-  don = don.replaceAll('"}', '»}');
 
   return don;
 };
